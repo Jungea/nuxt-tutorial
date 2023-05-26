@@ -1,7 +1,7 @@
 <template>
   <div>
     <AppHeader />
-    Some default layout shared across all pages
+    A *default* layout
     <slot />
     <AppFooter />
   </div>
