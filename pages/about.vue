@@ -6,11 +6,4 @@
 </template>
 
 <script setup>
-function enableCustomLayout() {
-  setPageLayout('custom')
-}
-
-definePageMeta({
-  // layout: false,
-});
 </script>
