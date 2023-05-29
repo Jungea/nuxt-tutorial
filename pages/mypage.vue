@@ -1,15 +1,25 @@
 <template>
   <div>
-    <NuxtLayout name="freedom">
-      <template #header> Some header template content. </template>
-
       The rest of the page
-    </NuxtLayout>
+      {{data}}
+    <pre>pending: {{ pending }}</pre>
+    <button @click="loadPost">Refresh data</button>
   </div>
 </template>
 
 <script setup>
-definePageMeta({
-  layout: false,
-});
+const config = useRuntimeConfig()
+
+const { data, pending, error, refresh } = await useFetch('/post/', { baseURL: config.public.baseUrl})
+// const { data, pending, error, refresh } = await useFetch(config.public.baseUrl + '/post/')
+// const { data, pending, error, refresh } = await useFetch('/post/')
+console.log(config.public.baseUrl)
+console.log(data)
+console.log(refresh)
+
+const loadPost = () => {
+  refresh()
+}
+// const users = await $fetch('/post', { baseUrl: config.public.baseUrl})
+//     .catch((error) => error.data)
 </script>
