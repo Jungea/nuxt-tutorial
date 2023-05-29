@@ -6,6 +6,7 @@
     <AppAlert>
       This is an auto-imported component
     </AppAlert>
+    <NuxtLink to="/about">About page</NuxtLink>
   </div>
 </template>
 

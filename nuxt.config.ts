@@ -7,5 +7,8 @@ export default defineNuxtConfig({
         public: {
             apiBase: '/api'
         }
-    }
+    },
+    app: {
+        pageTransition: { name: 'page', mode: 'out-in' }
+    },
 })
